@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <ol>
+        <li>
+            <p>1. lista</p>
+        </li>
+        <li>
+            <p>2. lista</p>
+        </li>
+    </ol>
+
+    <script>
+        var elemento = document.createElement("li");
+        var contenido = document.createTextNode("Nuevo texto");
+
+        elemento.appendChild(contenido);
+
+        var padre = document.getElementsByTagName("li")[0].parentNode;
+        padre.appendChild(elemento);
+
+    </script>
+</body>
+</html>

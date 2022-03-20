@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <ol>
+        <li>
+            primer elemento
+        </li>
+        <li>
+            segundo elemento
+        </li>
+    </ol>
+
+    <script>
+
+        //Creando un elemento:
+        var elemento = document.createElement("li");
+        var contenido = document.createTextNode("tercer elemento");
+        elemento.appendChild(contenido);
+        
+        //Para modificar un elemento:
+        var segundoElemento = document.getElementsByTagName("li")[1];
+        segundoElemento.innerHTML = "Hola"; 
+        
+
+
+        //Para reemplazar un elemento:
+        var padre = document.getElementsByTagName("li")[0].parentNode;
+        var referencia = document.getElementsByTagName("li")[0];
+        padre.replaceChild(elemento, referencia);
+
+
+        //para eliminar elementos:
+        var papa = document.getElementsByTagName("li")[0].parentNode;
+        referencia = document.getElementsByTagName("li")[0];
+        papa.removeChild(refernecia);
+
+    </script>
+</body>
+</html>

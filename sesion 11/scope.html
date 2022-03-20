@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope de Javascript</title>
+</head>
+<body>
+    <script>
+        // Variable GLOBAL - Podemos acceder a ellas desde cualquier parte del codigo.
+        // Variable LOCAL - Variables creadas dentro de una funcion, solo pueden ser accedidas desde su funcion o una funcion anidada
+        var variableGlobal = "esta es global";
+        
+        function miFuncion()
+        {
+            alert(variableGlobal); // Accedo a la variable global desde la funcion
+
+            variableGlobal = "Esta es global modificada"; //Incluso puedo modificar la variable global desde la funcion
+            alert(variableGlobal); 
+
+            var vairableLocal = "Esta es local"; //Creo una variable local dentro de la funcion
+            alert(vairableLocal); //Solo puedo acceder a la variable local desde la funcion en la que fue creada
+
+            function miFuncionLocal() //Creo una funcion local o anindada dentro de otra funcion
+            {
+                var variableLocal = "Esta es variable local dentro de funcionLocal";
+                alert(variableLocal);
+            }
+            miFuncionLocal(); //Llamo la funcionLocal dentro de otra funcion
+        }
+        
+        miFuncion();
+
+
+        //Seguridad:
+        //A continuacion vamos a crear una funcion autoinvocada para que nada de afuera pueda acceder a adentro de ella
+        (function miFuncionAutoinvocada(){
+            //...CODIGO...
+        }())
+        //De esta manera la funcion queda protegida
+    </script>
+</body>
+</html>

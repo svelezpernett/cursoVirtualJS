@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function nombreDeLaFuncion()
+        {
+            //Instrucciones
+            document.write("Hola");
+        }
+
+        nombreDeLaFuncion();
+        //Llamar la funcion
+
+
+        function saludo(nombre) //Funcion con parametro
+        {
+            document.write("Hola "+ nombre);
+        }
+
+        saludo("Santiago");
+        //Se llama la funmcion y se indica el parametro
+
+
+        function suma(num1, num2)
+        {
+            var numero1 = num1;
+            var numero2 = num2;
+            var resultado = numero1+numero2;
+            return resultado;
+        }
+        document.write(suma(1, 2));
+    </script>
+</body>
+</html>

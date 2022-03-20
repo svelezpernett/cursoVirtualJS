@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background: #dddddd;
+            display: inline-block;
+            margin-right: 10px;
+            border: 1px solid #000;
+
+        }
+
+        .azul{
+            background: #0074d9;
+            border: 1px solid #000;
+        }
+
+        .rojo{
+            background: #FF4136;
+            border: 1px solid#000;
+        }
+    </style>
+</head>
+<body>
+    <section id="contenedor">
+        <div></div>
+        <div></div>
+    </section>
+    
+    <script>
+        //Crear un elemento nuevo y añadirlo a section
+        var elemento = document.createElement("div");
+        var padre = document.getElementById("contenedor");
+        padre.appendChild(elemento);
+
+        //añadiendo atrivutos al elemento
+        elemento.setAttribute("class", "azul");
+
+
+        //PLUS: El insert before sirve para añadir un elemento en un orden o posicion deseada, en este caso en el segundo puesto
+        //Creo un nuevo elemento para el ejemplo
+        var elemento2 = document.createElement("div");
+        var referencia = document.getElementsByTagName("div")[1];
+        padre.insertBefore(elemento2, referencia);
+
+        elemento2.setAttribute("class", "rojo");
+    </script>
+</body>
+</html>
